@@ -5,7 +5,7 @@ import sys
 
 
 def plus(op1, op2):
-    """ Function to sum the operands. Ops have to be ints """
+    """ FUNCION SUMA LOS OPERANDOS DEBEN SER INTS """
     return op1 + op2
 
 
