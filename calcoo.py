@@ -20,9 +20,9 @@ if __name__ == "__main__":
     Usarcalc = Calculadora()
 
     if sys.argv[2] == "suma":
-        resultado = calc.suma(operando1, operando2)
+        resultado = Usarcalc.suma(operando1, operando2)
     elif operacion == "resta":
-       sys.argv[2] = calc.resta(operando1, operando2)
+       sys.argv[2] = Usarcalc.resta(operando1, operando2)
     else:
         sys.exit("operacion no valida")
     print(resultado)
