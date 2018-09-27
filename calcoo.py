@@ -1,28 +1,28 @@
 import sys
 
-class Calculadora(object):
+class Calculadora():
 
+    #error al intentar poner operador preguntar?????????
+    def __init__(self, operando1, operando2, operador):
+        self.operando1 = operando1
+        self.operando2 = operando2
+        self.operador = operador
+        
+    def suma(self):
+        return self.operando1 + self.operando2
 
-    def suma(self, operando1, operando2):
-        return operando1 + operando2
-
-    def resta(self, operando1, operando2):
-        return operando1 - operando2
+    def resta(self):
+        return self.operando1 - self.operando2
 
 if __name__ == "__main__":
 
-    try:
-        operando1 = int(sys.argv[1])
-        operando2 = int(sys.argv[3])
-    except ValueError:
-        sys.exit("Error: Non numerical parameters")
+    Usarcalc = Calculadora(float(sys.argv[1]), float(sys.argv[3]), sys.argv[2] )
+ 
+    if Usarcalc.operador == "suma":
+       print(Usarcalc.suma())
+    elif Usarcalc.operador == "resta":
+      print(Usarcalc.resta())
 
-    Usarcalc = Calculadora()
-
-    if sys.argv[2] == "suma":
-        resultado = Usarcalc.suma(operando1, operando2)
-    elif operacion == "resta":
-       sys.argv[2] = Usarcalc.resta(operando1, operando2)
     else:
-        sys.exit("operacion no valida")
-    print(resultado)
+        sys.exit('Operación sólo puede ser sumar o restar.')
+        
