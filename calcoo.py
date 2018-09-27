@@ -2,7 +2,7 @@ import sys
 
 class Calculadora():
 
-    #error al intentar poner operador preguntar?????????
+    
     def __init__(self, operando1, operando2, operador):
         self.operando1 = operando1
         self.operando2 = operando2
