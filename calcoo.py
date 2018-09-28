@@ -16,13 +16,22 @@ class Calculadora():
 
 if __name__ == "__main__":
 
-    Usarcalc = Calculadora(float(sys.argv[1]), float(sys.argv[3]), sys.argv[2] )
+   
+	
+    while len(sys.argv) != 4:
+        sys.exit("Input: python3 calc.py operando1 operador operando2")
+   
+    try:
+        Usarcalc = Calculadora(float(sys.argv[1]), float(sys.argv[3]), sys.argv[2] )
+
+    except ValueError:
+        sys.exit("Los operandos tienen que ser números")
+
  
     if Usarcalc.operador == "suma":
-       print(Usarcalc.suma())
+        print(Usarcalc.suma())
     elif Usarcalc.operador == "resta":
-      print(Usarcalc.resta())
-
+        print(Usarcalc.resta())
     else:
         sys.exit('Operación sólo puede ser sumar o restar.')
         

@@ -15,9 +15,9 @@ class CalculadoraHija(calcoo.Calculadora):
 
 if __name__ == "__main__":
 
-    if len(sys.argv) != 4:
+    while len(sys.argv) != 4:
         sys.exit("Input: python3 calc.py operando1 operador operando2")
-
+   
     
     try:
         UsarCalchija = CalculadoraHija(float(sys.argv[1]), float(sys.argv[3]), sys.argv[2])
