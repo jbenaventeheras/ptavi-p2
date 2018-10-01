@@ -13,14 +13,15 @@ class CalculadoraHija(calcoo.Calculadora):
         except ZeroDivisionError:
             sys.exit("Division by zero is not allowed")
 
+
 if __name__ == "__main__":
 
     while len(sys.argv) != 4:
         sys.exit("Input: python3 calc.py operando1 operador operando2")
-   
-    
+
     try:
-        UsarCalchija = CalculadoraHija(float(sys.argv[1]), float(sys.argv[3]), sys.argv[2])
+        UsarCalchija = CalculadoraHija(float(sys.argv[1]), float(sys.argv[3]),
+                                       sys.argv[2])
 
     except ValueError:
         sys.exit("Los operandos tienen que ser números")
@@ -39,5 +40,3 @@ if __name__ == "__main__":
 
     else:
         sys.exit('Operación sólo puede ser sumar o restar.')
-        
-

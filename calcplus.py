@@ -6,15 +6,18 @@ if __name__ == "__main__":
     while len(sys.argv) != 2:
         sys.exit("Input: python3 calcplus.py fichero")
 
-with open(sys.argv[1], 'r') as f:
-    operaciones = [operacion.split(',') for operacion in f]
-    for operacion in operaciones:
+with open(sys.argv[1], 'r') as fichero:
+    datos_lineas = []
+    for linea in fichero:
+        datos_lineas.append(linea[:-1].split(','))
+    for operacion in datos_lineas:
         result = float(operacion[1])
         Not_Allowed = False
         try:
             for number in operacion[2:]:
                 operando = float(number)
-                cuenta = calcoohija.CalculadoraHija(result, operando, operacion[0])
+                cuenta = calcoohija.CalculadoraHija(result, operando,
+                                                    operacion[0])
                 if cuenta.operador == 'suma':
                     result = cuenta.suma()
                 elif cuenta.operador == 'resta':
